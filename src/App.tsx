@@ -1,0 +1,21 @@
+import { useState } from 'react';
+import './App.css'
+import Header from './components/Header';
+import Hero from './components/Hero';
+import TrustedBy from './components/TrustedBy';
+import Services from './components/Services';
+
+function App() {
+  const [theme, setTheme] = useState<string>(localStorage.getItem('theme') ? localStorage.getItem('theme') as string : "light");
+
+  return (
+    <div className=" bg-white/50 dark:bg-black relative">
+        <Header theme={theme} setTheme={setTheme} />
+        <Hero />
+        <TrustedBy />
+        <Services />
+    </div>
+  );
+}
+
+export default App
